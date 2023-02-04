@@ -17,7 +17,7 @@ function DisplayThreeProducts() {
                         threeData.push(element)
                     }
                     return (
-                        <Stack direction="horizontal" gap={3} margin={15} >
+                        <Stack direction="horizontal" gap={3} margin={15} className="flex-container"  >
                             {
                                 threeData.map(product => {
                                     return (

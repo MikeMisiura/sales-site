@@ -3,7 +3,7 @@ import Navigate from "./Navigate";
 import { Outlet } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { ProductContext } from "./ContextProvider";
-
+import './App.css';
 
 function Products() {
 
@@ -24,9 +24,9 @@ function Products() {
         <>
             <Navigate />
             <h1>Products</h1>
-            <Button href={`products/add`} variant="primary">Add Product</Button>
-            <Button onClick={ () => handleAsc() } variant="primary">Sort Ascending</Button>
-            <Button onClick={ () => handleDsc() } variant="primary">Sort Descending</Button>
+            <Button href={`products/add`} variant="primary" className="prodBtn">Add Product</Button>
+            <Button onClick={ () => handleAsc() } variant="primary" className="prodBtn">Sort Ascending</Button>
+            <Button onClick={ () => handleDsc() } variant="primary" className="prodBtn">Sort Descending</Button>
             
             <Outlet />
         </>

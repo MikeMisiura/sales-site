@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import c from "./images/c.jpg"
+import './App.css';
 
-
-function About() {
+function Navigate() {
     // const handleSearchChange = (event) => {
     //     event.preventDefault()
     //     console.log(event.target.value)
@@ -11,7 +11,7 @@ function About() {
 
     return (
         <Navbar>
-            <Container>
+            <div className='nav'>
 
                 <Navbar.Brand href='/home'>
                     <img src={c} alt='CCC mock logo' height={100} id='logo' />
@@ -24,7 +24,7 @@ function About() {
                         <Nav.Link href="/products">Products</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
-            </Container>
+            </div>
             {/* <Form className='d-flex'>
                 <FormControl
                     onChange={handleSearchChange}
@@ -39,4 +39,4 @@ function About() {
     );
 }
 
-export default About;
+export default Navigate;

@@ -1,0 +1,22 @@
+.productCard {
+    width: 18rem;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.nav {
+    margin: 10px;
+}
+
+.prodBtn {
+    margin: 10px;
+}
+
+.home {
+    margin: 10px;
+}
+
