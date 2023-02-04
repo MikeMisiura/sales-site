@@ -24,7 +24,7 @@ function About() {
                 <div>
                     <img 
                         src="https://source.unsplash.com/random" 
-                        alt='about photo' 
+                        alt='about' 
                         width={300} 
                         id='logo' 
                     />

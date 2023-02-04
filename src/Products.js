@@ -1,12 +1,13 @@
-import React from 'react';
+import React from "react";
 import Navigate from "./Navigate";
+import { Outlet } from "react-router-dom";
 
 function Products() {
+
     return (
         <>
             <Navigate />
-        
-            <p>This is the Products Page</p>
+            <Outlet />
         </>
     );
 }

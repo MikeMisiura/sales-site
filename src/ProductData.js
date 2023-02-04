@@ -13,7 +13,7 @@ module.exports = () => {
                price: faker.commerce.price(10, 200, 2, '$'),
                madeInMontana: faker.datatype.boolean(),
                description: faker.commerce.productDescription(),
-               imageUrl: faker.internet.avatar()
+               imageUrl: faker.image.business(640, 480, true)
           })
      }
 

@@ -3,6 +3,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Products from "./Products";
+import ProductDetails from "./ProductDetails";
+import DisplayAllProducts from "./DisplayAllProducts";
+import NewProduct from "./NewProduct";
+import EditProduct from './EditProduct';
 
 function App() {
   return (
@@ -11,7 +15,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="home" element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="products" element={<Products />} />
+        <Route path="products" element={<Products />}>
+          <Route index element={<DisplayAllProducts />} />
+          <Route path="add" element={<NewProduct />} />
+          <Route path="edit/:productId" element={<EditProduct />} />
+          <Route path=":productId" element={<ProductDetails />} />
+
+        </Route>
       </Routes>
     </BrowserRouter>
   );
