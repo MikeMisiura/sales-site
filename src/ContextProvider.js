@@ -22,9 +22,6 @@ export const ProductProvider = (props) => {
   }
 
   function getProduct(id) {
-    console.log("getting product: " + id)
-    console.log(data.find(p => p.id === id))
-
     return (data.find(p => p.id === id));
   }
 

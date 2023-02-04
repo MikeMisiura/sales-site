@@ -22,12 +22,12 @@ function Products() {
 
     return (
         <>
+            <Navigate />
             <h1>Products</h1>
             <Button href={`products/add`} variant="primary">Add Product</Button>
             <Button onClick={ () => handleAsc() } variant="primary">Sort Ascending</Button>
             <Button onClick={ () => handleDsc() } variant="primary">Sort Descending</Button>
             
-            <Navigate />
             <Outlet />
         </>
     );

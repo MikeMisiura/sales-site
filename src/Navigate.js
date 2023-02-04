@@ -1,22 +1,20 @@
 import React from 'react';
-import { Container, Navbar, Nav, Form, FormControl } from 'react-bootstrap';
+import { Container, Navbar, Nav } from 'react-bootstrap';
+import c from "./images/c.jpg"
+
 
 function About() {
-    const handleSearchChange = (event) => {
-        event.preventDefault()
-        console.log(event.target.value)
-    }
+    // const handleSearchChange = (event) => {
+    //     event.preventDefault()
+    //     console.log(event.target.value)
+    // }
 
     return (
         <Navbar>
             <Container>
 
                 <Navbar.Brand href='/home'>
-                <img 
-                    // src="https://source.unsplash.com/random" 
-                    src="https://source.unsplash.com/photos/645Xrtc0BKs" 
-                    alt='CCC mock logo' width={100} id='logo' />
-                {/* <img src="../src/images/c.jpg" alt='CCC mock logo' width={100} id='logo' /> */}
+                    <img src={c} alt='CCC mock logo' height={100} id='logo' />
                     Cast, Cut, and Crochet
                 </Navbar.Brand>
                 <Navbar.Collapse id='basic-navbar-nav'>
