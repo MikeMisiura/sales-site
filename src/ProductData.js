@@ -10,7 +10,7 @@ module.exports = () => {
           data.products.push({
                id: num,
                itemName: faker.commerce.productName(),
-               price: faker.commerce.price(10, 200, 2, '$'),
+               price: faker.datatype.number({ min: 10, max: 200, precision: 1 }),
                madeInMontana: faker.datatype.boolean(),
                description: faker.commerce.productDescription(),
                imageUrl: faker.image.business(640, 480, true)

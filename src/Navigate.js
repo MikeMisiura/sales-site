@@ -27,7 +27,7 @@ function About() {
                     </Nav>
                 </Navbar.Collapse>
             </Container>
-            <Form className='d-flex'>
+            {/* <Form className='d-flex'>
                 <FormControl
                     onChange={handleSearchChange}
                     type='search'
@@ -36,7 +36,7 @@ function About() {
                     aria-label='Search'
                 />
 
-            </Form>
+            </Form> */}
         </Navbar>
     );
 }

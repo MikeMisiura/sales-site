@@ -44,7 +44,7 @@ function ProductDetails() {
 
                                             <Card.Body>
                                                 <Card.Title>{product.itemName}</Card.Title>
-                                                <Card.Text>{product.price}</Card.Text>
+                                                <Card.Text>${product.price}</Card.Text>
                                                 { mim(product.montana)}
                                                 <Card.Text>{product.description}</Card.Text>
                                                 <Stack gap={3}>

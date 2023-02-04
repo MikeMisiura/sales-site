@@ -37,7 +37,7 @@ function DisplayThreeProducts() {
                                                 <Card.Img variant="top" src={data.imageUrl} />
                                                 <Card.Body>
                                                     <Card.Title>{data.itemName}</Card.Title>
-                                                    <Card.Text>{data.price}</Card.Text>
+                                                    <Card.Text>${data.price}</Card.Text>
                                                     <Stack gap={3}>
                                                         <Button href={`/products/${data.id}`} variant="primary">See Details</Button>
                                                         <Button href={`/products/edit/${data.id}`} variant="warning">Edit</Button>
@@ -60,7 +60,7 @@ function DisplayThreeProducts() {
                                                 <Card.Img variant="top" src={data.imageUrl} />
                                                 <Card.Body>
                                                     <Card.Title>{data.itemName}</Card.Title>
-                                                    <Card.Text>{data.price}</Card.Text>
+                                                    <Card.Text>${data.price}</Card.Text>
                                                     <Stack gap={3}>
                                                         <Button href={`/products/${data.id}`} variant="primary">See Details</Button>
                                                         <Button href={`/products/edit/${data.id}`} variant="warning">Edit</Button>
