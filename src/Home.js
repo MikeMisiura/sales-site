@@ -5,15 +5,12 @@ import c from "./images/c.jpg"
 import './App.css';
 
 function Home() {
-
-
     return (
         <>
             <Navigate />
-            <div className='home' >
+            <div className='margin' >
                 <h1>
                     <img
-                        //  src="https://source.unsplash.com/photos/645Xrtc0BKs" 
                         src={c}
                         alt='CCC mock logo' width={100} id='logo' />
                     Welcome to Cast, Cut, and Crochet

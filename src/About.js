@@ -1,13 +1,14 @@
 import React from 'react';
 import Navigate from "./Navigate";
 import Stack from 'react-bootstrap/Stack'
+import './App.css';
 
 function About() {
     return (
         <>
             <Navigate />
-            <h1>About Us</h1>
-            <Stack direction="horizontal" gap={3} margin={15} >
+            <h1 className="margin" >About Us</h1>
+            <Stack direction="horizontal" gap={3} className="margin" >
                 <div>
                     {/* placeholder description from ChatGPT. chat.openai.com*/}
                     A small crafting company based in Montana specializes in handmade, 

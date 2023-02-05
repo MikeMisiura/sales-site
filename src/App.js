@@ -4,7 +4,7 @@ import Home from "./Home";
 import About from "./About";
 import Products from "./Products";
 import ProductDetails from "./ProductDetails";
-import DisplayAllProducts from "./DisplayAllProducts";
+import ProductHeader from "./ProductHeader";
 import NewProduct from "./NewProduct";
 import EditProduct from './EditProduct';
 
@@ -16,12 +16,11 @@ function App() {
         <Route path="home" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="products" element={<Products />}>
-          <Route index element={<DisplayAllProducts />} />
+          <Route index element={<ProductHeader />} />
           <Route path="add" element={<NewProduct />} />
           <Route path="edit/:productId" element={<EditProduct />} />
           <Route path=":productId" element={<ProductDetails />} />
           <Route path="sort" element={<ProductDetails />} />
-
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,18 +1,11 @@
 import React from 'react';
-import { Container, Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import c from "./images/c.jpg"
 import './App.css';
 
 function Navigate() {
-    // const handleSearchChange = (event) => {
-    //     event.preventDefault()
-    //     console.log(event.target.value)
-    // }
-
     return (
-        <Navbar>
-            <div className='nav'>
-
+        <Navbar className='margin'>
                 <Navbar.Brand href='/home'>
                     <img src={c} alt='CCC mock logo' height={100} id='logo' />
                     Cast, Cut, and Crochet
@@ -24,17 +17,6 @@ function Navigate() {
                         <Nav.Link href="/products">Products</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
-            </div>
-            {/* <Form className='d-flex'>
-                <FormControl
-                    onChange={handleSearchChange}
-                    type='search'
-                    placeholder='Search'
-                    className='me-4'
-                    aria-label='Search'
-                />
-
-            </Form> */}
         </Navbar>
     );
 }

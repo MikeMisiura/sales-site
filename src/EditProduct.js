@@ -1,19 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ProductContext } from './ContextProvider';
+import './App.css';
 
 function EditProduct() {
-    let params = useParams()
-    let pId = params.productId
-
-    let { editProduct } = useContext(ProductContext)
-
-    // let globalProduct = getProduct(pId)
-
-    // console.log(globalProduct)
-    let navigate = useNavigate()
 
     const [product, setProduct] = useState(
         {
@@ -25,12 +17,42 @@ function EditProduct() {
         }
     )
 
+    let navigate = useNavigate()
+    let params = useParams()
+    let pId = params.productId
+    let id = parseInt(pId)
+    let { editProduct, getProduct } = useContext(ProductContext)
+    let globalProduct = getProduct(id)
     let { itemName, price, montana, description, imageUrl } = product
 
+    useEffect(() => {
+        async function handleGetProduct() {
+            globalProduct = getProduct(id)
+            if (globalProduct) {
+                setProduct({
+                    itemName: globalProduct.itemName,
+                    price: globalProduct.price,
+                    montana: globalProduct.madeInMontana,
+                    description: globalProduct.description,
+                    imageUrl: globalProduct.imageUrl
+                })
+            } else {
+                globalProduct = getProduct(id)
+            }
+        }
+        handleGetProduct()
+    }, [globalProduct]);
+
     function handleChange(event) {
-        setProduct((preValue) => {
-            return { ...preValue, [event.target.name]: event.target.value }
-        })
+        if (event.target.name === "montana") {
+            setProduct((preValue) => {
+                return { ...preValue, montana: event.target.checked }
+            })
+        } else {
+            setProduct((preValue) => {
+                return { ...preValue, [event.target.name]: event.target.value }
+            })
+        }
     }
 
     function handleSubmit(event) {
@@ -42,9 +64,7 @@ function EditProduct() {
     }
 
     return (
-        <>
-
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} className="margin">
             <Form.Group className="mb-3" controlId="formBasicProductName">
                 <Form.Label>Product Name</Form.Label>
                 <Form.Control
@@ -58,7 +78,7 @@ function EditProduct() {
             <Form.Group className="mb-3" controlId="formBasicPrice">
                 <Form.Label>Price</Form.Label>
                 <Form.Control
-                    type="text"
+                    type="number"
                     name="price"
                     placeholder="Enter Price"
                     value={price}
@@ -66,7 +86,7 @@ function EditProduct() {
                 />
             </Form.Group>
             <Form.Check
-                type="switch"
+                type="checkbox"
                 name="montana"
                 id="formMadeInMontana"
                 label="Made in Montana"
@@ -98,7 +118,6 @@ function EditProduct() {
                 Submit
             </Button>
         </Form>
-        </>
     );
 }
 

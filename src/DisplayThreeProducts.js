@@ -4,8 +4,6 @@ import Stack from 'react-bootstrap/Stack'
 import ProductCard from "./ProductCard";
 import DisplayAllProducts from "./DisplayAllProducts";
 
-
-
 function DisplayThreeProducts() {
     return (
         <ProductContext.Consumer>

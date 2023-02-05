@@ -11,7 +11,6 @@ function ProductCard(props) {
 
     function handleDelete(id) {
         deleteProduct(id)
-        console.log("deleted product: " + id)
     }
 
     return (

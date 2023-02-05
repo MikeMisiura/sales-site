@@ -19,9 +19,15 @@ function NewProduct() {
     let { itemName, price, montana, description, imageUrl } = product
 
     function handleChange(event) {
+        if (event.target.name === "montana") {
+            setProduct((preValue) => {
+                return { ...preValue, montana: event.target.checked }
+            })
+        } else {
             setProduct((preValue) => {
                 return { ...preValue, [event.target.name]: event.target.value }
             })
+        }
     }
 
     function handleSubmit(event) {
@@ -33,7 +39,7 @@ function NewProduct() {
     }
 
     return (
-        <Form onSubmit={handleSubmit}>
+        <Form className='margin' onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicProductName">
                 <Form.Label>Product Name</Form.Label>
                 <Form.Control
@@ -47,7 +53,7 @@ function NewProduct() {
             <Form.Group className="mb-3" controlId="formBasicPrice">
                 <Form.Label>Price</Form.Label>
                 <Form.Control
-                    type="text"
+                    type="number"
                     name="price"
                     placeholder="Enter Price"
                     value={price}
@@ -55,7 +61,7 @@ function NewProduct() {
                 />
             </Form.Group>
             <Form.Check
-                type="switch"
+                type="checkbox"
                 name="montana"
                 id="formMadeInMontana"
                 label="Made in Montana"

@@ -5,7 +5,7 @@ module.exports = () => {
 
      let data = { products: [] }
 
-     for (let i = 0; i < 5; i++) {
+     for (let i = 0; i < 15; i++) {
           let num = i + 1
           data.products.push({
                id: num,
